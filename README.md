@@ -4,9 +4,9 @@ Este é um sistema de gerenciamento de rebeldes inspirado no universo de Star Wa
 O sistema permite executar as seguintes funcionalidades:
 - __🧝 Adicionar Rebeldes:__ Insere informações sobre um rebelde, como nome, idade, gênero, localização e status de atividade. Os rebeldes adicionados podem ser personagens icônicos do universo de Star Wars.
 - __⚔️ Adicionar Item ao Inventário:__ Permite adicionar itens ao inventário de um rebelde, como arma, munição, água e comida. Os itens disponíveis no inventário são baseados nos elementos presentes no universo de Star Wars, como sabres de luz, blasters, rations e água destilada.
-- __🌍 Atualizar Localização:__ Atualiza a localização de um rebelde específico no banco de dados. Os locais disponíveis para atualização são inspirados em planetas e locais famosos de Star Wars, como Tatooine, Alderaan, Millennium Falcon, Jakku, Estrela da Morte, Dagobah, Naboo, Templo Jedi e Coruscant.
-- __⚠️ Reportar Traidor:__ Marca um rebelde como traidor se o mesmo for reportado por múltiplos usuários. Se um rebelde for reportado três vezes ou mais como traidor, ele será marcado como inativo e perderá seus privilégios de rebelde. Essa funcionalidade visa manter a ordem e a segurança da rebelião contra o Império Galáctico.
-- __📊 Consultar Relatório em Porcentagem:__ Exibe a porcentagem de rebeldes ativos e inativos com base nos dados armazenados no banco de dados. Isso permite que os líderes da rebelião tenham uma visão geral do status e engajamento dos rebeldes na luta contra o Império.
+- __🌍 Atualizar Localização:__ Atualiza a localização de um rebelde específico no banco de dados. 
+- __⚠️ Reportar Traidor:__ Marca um rebelde como traidor se o mesmo for reportado 3 vezes e ele será marcado como inativo e perderá seus privilégios de rebelde. Essa funcionalidade visa manter a ordem e a segurança da rebelião contra o Império Galáctico!
+- __📊 Consultar Relatório em Porcentagem:__ Exibe a porcentagem de rebeldes ativos e inativos com base nos dados armazenados no banco de dados. Isso permite que os líderes da rebelião tenham uma visão geral do status e engajamento dos rebeldes na luta contra o Império!
 - __📋 Consultar Dados dos Rebeldes:__ Mostra uma lista com todos os rebeldes e suas informações armazenadas no banco de dados. Os dados incluem nome, idade, gênero, localização e status de atividade de cada rebelde.
 - __🔍 Consultar Inventário:__ Exibe os itens presentes no inventário de um rebelde específico. Isso permite verificar quais armas, munições, água e comida um rebelde possui, fornecendo informações importantes para a organização da resistência.
 
@@ -31,4 +31,4 @@ O sistema permite executar as seguintes funcionalidades:
 - Os dados inseridos em seu banco de dados local não estarão automaticamente disponíveis para outras pessoas.
 - Para compartilhar os dados, você pode exportar o banco de dados, compartilhar scripts SQL ou configurar um banco de dados remoto.
 
-⚔️✨ Que a Força esteja com você enquanto gerencia e lidera os rebeldes na luta pela liberdade contra o Império Galáctico!
+### ⚔️✨ Que a Força esteja com você enquanto gerencia e lidera os rebeldes na luta pela liberdade contra o Império Galáctico!
