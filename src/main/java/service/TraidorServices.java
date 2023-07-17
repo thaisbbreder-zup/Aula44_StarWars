@@ -17,7 +17,7 @@ public class TraidorServices {
                     PreparedStatement preparedStatement = connection.prepareStatement(sqlUpdate);
                     preparedStatement.setInt(1, idInformado);
                     preparedStatement.executeUpdate();
-                    System.out.println("Rebelde marcado como traidor e se tornou inativo!");
+                    System.out.println("O rebelde foi marcado como traidor e agora está inativo na Aliança Rebelde.");
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }

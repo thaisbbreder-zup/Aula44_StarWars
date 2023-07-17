@@ -18,93 +18,128 @@ public class Main {
         statement = connection.createStatement();
 
         Scanner entradaDoUsuario = new Scanner(System.in);
-        System.out.println("MENU");
-        System.out.println("1 - ADICIONAR REBELDES;");
-        System.out.println("2 - ADICIONAR ITEM AO INVENTARIO;");
-        System.out.println("3 - ATUALIZAR LOCALIZAÇÃO");
-        System.out.println("4 - REPORTAR TRAIDOR;");
-        System.out.println("5 - CONSULTAR RELATÓRIO EM PORCENTAGEM;");
-        System.out.println("6 - CONSULTAR DADOS DOS REBELDES;");
-        System.out.println("7 - CONSULTAR INVENTARIO;");
-        System.out.println("Escolha uma opção:");
+        System.out.println("MENU PRINCIPAL - BASE DA ALIANÇA REBELDE");
+        System.out.println("1️⃣ - RECRUTAR NOVOS REBELDES");
+        System.out.println("2️⃣ - ADICIONAR ITEM AO INVENTÁRIO DE BORDO");
+        System.out.println("3️⃣ - ATUALIZAR COORDENADAS DE LOCALIZAÇÃO");
+        System.out.println("4️⃣ - REPORTAR TRAIDOR DA LUTA");
+        System.out.println("5️⃣ - CONSULTAR RELATÓRIO DE ATIVIDADE");
+        System.out.println("6️⃣ - CONSULTAR DADOS DOS REBELDES E TRAIDORES");
+        System.out.println("7️⃣ - CONSULTAR INVENTÁRIO DE BORDO");
+        System.out.println("8️⃣ - SAIR");
+        System.out.println("Faça sua escolha usando o número correspondente, que a Força esteja com você:");
 
         int opcao = entradaDoUsuario.nextInt();
         entradaDoUsuario.nextLine();
 
-        switch (opcao) {
-            case 1:
-                System.out.println("Insira os dados");
+              switch (opcao) {
+                case 1:
+                    System.out.println("ADICIONAR NOVO RECRUTA");
+                    System.out.println("---------------------------------");
+                    System.out.println("Insira os dados do novo recruta!");
 
-                System.out.println("Nome: ");
-                String nome = entradaDoUsuario.nextLine();
+                    System.out.println("Nome do Rebelde: ");
+                    String nome = entradaDoUsuario.nextLine();
 
-                System.out.println("Idade: ");
-                int idade = entradaDoUsuario.nextInt();
+                    System.out.println("Idade do Rebelde: ");
+                    int idade = entradaDoUsuario.nextInt();
 
-                System.out.println("Gênero: ");
-                String genero = entradaDoUsuario.next();
+                    System.out.println("Gênero do Rebelde: ");
+                    String genero = entradaDoUsuario.next();
 
-                System.out.println("Localização: ");
-                String localizacao = entradaDoUsuario.nextLine();
+                    System.out.println("Localização do Rebelde: ");
+                    String localizacao = entradaDoUsuario.nextLine();
 
-                entradaDoUsuario.nextLine();
-                System.out.println("Ativo: ");
-                boolean ativo = entradaDoUsuario.nextBoolean();
+                    entradaDoUsuario.nextLine();
+                    System.out.println("Status do Rebelde (Ativo ou Inativo): ");
+                    boolean ativo = entradaDoUsuario.nextBoolean();
 
-                RebeldeServices.insereDadosNoBanco(nome, idade, genero, localizacao, ativo);
-                break;
-            case 2:
-                System.out.println("LOJA");
-                System.out.println("Item: Arma \nValor: $100");
-                System.out.println("Item: Munição \nValor: $30");
-                System.out.println("Item: Água \nValor: $5");
-                System.out.println("Item: Comida \nValor: $15");
+                    System.out.println("Que a Força esteja com você, recrutando um novo membro para a Aliança Rebelde!\n");
+                    RebeldeServices.insereDadosNoBanco(nome, idade, genero, localizacao, ativo);
+                    break;
+                case 2:
+                    System.out.println("LOJA GALÁCTICA");
+                    System.out.println("--------------------------------");
+                    System.out.println("|     Item     |    Valor    |");
+                    System.out.println("--------------------------------");
+                    System.out.println("|     Sabre     |    $100    |");
+                    System.out.println("|    Blaster    |    $30     |");
+                    System.out.println("|      Água     |    $5      |");
+                    System.out.println("|    Ration     |    $15     |");
+                    System.out.println("--------------------------------");
 
-                System.out.println("Informe o id do rebelde: ");
-                int idInformado = entradaDoUsuario.nextInt();
+                    System.out.println("Informe o ID do rebelde: ");
+                    int idInformado = entradaDoUsuario.nextInt();
 
-                System.out.println("Informe o nome do produto comprado:");
-                String item_comprado = entradaDoUsuario.next();
+                    System.out.println("Informe o nome do produto desejado:");
+                    String item_comprado = entradaDoUsuario.next();
 
-                System.out.println("Informe o valor do produto:");
-                int valor_item = entradaDoUsuario.nextInt();
+                    System.out.println("Informe o valor do produto:");
+                    int valor_item = entradaDoUsuario.nextInt();
 
-                if (RebeldeServices.isRebeldeAtivo(idInformado)) {
-                    InventarioServices.insereCompraNoBanco(idInformado, item_comprado, valor_item);
-                } else {
-                    System.out.println("O rebelde informado é um traidor e não pode realizar compras.");
-                }
-                break;
-            case 3:
-                System.out.println("Informe o id do rebelde: ");
-                idInformado = entradaDoUsuario.nextInt();
-                entradaDoUsuario.nextLine();
+                    if (RebeldeServices.isRebeldeAtivo(idInformado)) {
+                        InventarioServices.insereCompraNoBanco(idInformado, item_comprado, valor_item);
+                    } else {
+                        System.out.println("Este rebelde está do lado sombrio da Força e não pode realizar compras na loja galáctica.");
+                    }
+                    break;
+                case 3:
+                    System.out.println("ATUALIZAR LOCALIZAÇÃO DO REBELDE");
+                    System.out.println("---------------------------------");
 
-                System.out.println("Informe o a nova localização: ");
-                String novaLocalizacao = entradaDoUsuario.nextLine();
+                    System.out.println("Informe o ID do rebelde: ");
+                    idInformado = entradaDoUsuario.nextInt();
+                    entradaDoUsuario.nextLine();
 
-                RebeldeServices.atualizaLocalizacaoNaTabela(idInformado, novaLocalizacao);
-                break;
-            case 4:
-                System.out.println("Informe o ID do rebelde que você deseja reportar como traidor: ");
-                idInformado = entradaDoUsuario.nextInt();
-                TraidorServices.reportarRebelde(idInformado);
-                break;
-            case 5:
-                DadosServices.obterTotalRebeldes();
-                DadosServices.obterTotalTraidores();
-                break;
-            case 6:
-                DadosServices.consultaDadosNoBanco();
-                break;
-            case 7:
-                System.out.println("Informe o id do rebelde: ");
-                idInformado = entradaDoUsuario.nextInt();
-                InventarioServices.invetarioDoRebelde(idInformado);
-                break;
-            default:
-                System.out.println("Opção inválida!");
-                break;
+                    System.out.println("Informe a nova localização do rebelde:");
+                    String novaLocalizacao = entradaDoUsuario.nextLine();
+
+                    System.out.println("Que a Força esteja com você ao atualizar a localização do rebelde!\n");
+                    RebeldeServices.atualizaLocalizacaoNaTabela(idInformado, novaLocalizacao);
+                    break;
+                case 4:
+                    System.out.println("REPORTAR REBELDE COMO TRAIDOR");
+                    System.out.println("-------------------------------");
+
+                    System.out.println("Informe o ID do rebelde que você deseja reportar como traidor: ");
+                    idInformado = entradaDoUsuario.nextInt();
+                    entradaDoUsuario.nextLine();
+
+                    TraidorServices.reportarRebelde(idInformado);
+
+                    System.out.println("Que a Força esteja com você!\n");
+                    break;
+                case 5:
+                    System.out.println("RELATÓRIO DE REBELDES E TRAIDORES");
+                    System.out.println("----------------------------------");
+                    System.out.println("Que a Força esteja com você ao obter os dados sobre a quantidade de rebeldes e traidores na Aliança Rebelde!");
+                    System.out.println("Use com sabedoria!\n");
+                    DadosServices.obterTotalRebeldes();
+                    DadosServices.obterTotalTraidores();
+                    break;
+                case 6:
+                    System.out.println("CONSULTAR DADOS DOS REBELDES E TRAIDORES");
+                    System.out.println("----------------------------------------");
+                    System.out.println("Que a Força esteja com você ao consultar os dados dos rebeldes e traidores na Aliança Rebelde!");
+                    DadosServices.consultaDadosNoBanco();
+                    break;
+                case 7:
+                    System.out.println("CONSULTAR INVENTÁRIO DO REBELDE");
+                    System.out.println("-------------------------------");
+                    System.out.println("Que a Força esteja com você ao consultar o inventário do rebelde na Aliança Rebelde!");
+                    System.out.println("Informe o ID do rebelde: ");
+                    idInformado = entradaDoUsuario.nextInt();
+                    entradaDoUsuario.nextLine();
+
+                    InventarioServices.invetarioDoRebelde(idInformado);
+                    break;
+                case 8:
+                    System.out.println("Ok, deixando o sistema...Que a força esteja sempre com você.");
+                    break;
+                default:
+                    System.out.println("Opção inválida! Que a Força esteja com você na próxima escolha.");
+                    break;
+            }
         }
     }
-}
+

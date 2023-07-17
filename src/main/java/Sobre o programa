@@ -1,0 +1,14 @@
+Para executar esse programa em seu computador, você precisará seguir os seguintes passos:
+
+1. Certifique-se de ter o Java Development Kit (JDK) instalado em seu computador.
+Você pode verificar a instalação digitando java -version em seu terminal ou prompt de comando.
+2. Baixe e instale o PostgreSQL em seu computador.
+Certifique-se de anotar as informações de conexão, como o nome de usuário, senha e o nome do banco de dados.
+3. Crie um novo banco de dados no PostgreSQL para ser usado pelo programa.
+4. Abra o código-fonte do programa em um editor de texto ou uma IDE Java, como o IntelliJ IDEA (o que eu usei!).
+5. Localize a classe Conexao no pacote connection e substitua as informações de conexão padrão pelo nome de usuário, senha e nome do banco de dados que você configurou no passo anterior.
+6. Salve o arquivo modificado.
+7. Abra o terminal ou prompt de comando e navegue até o diretório onde o código-fonte do programa está localizado.
+8. Compile o programa digitando javac org/example/Main.java no terminal ou prompt de comando. Isso irá gerar os arquivos de classe compilados.
+9. Execute o programa digitando java org.example.Main no terminal ou prompt de comando.
+10. O programa exibirá um menu com opções numeradas. Digite o número da opção desejada e siga as instruções fornecidas pelo programa para interagir com o sistema.

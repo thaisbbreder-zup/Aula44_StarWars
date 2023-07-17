@@ -15,7 +15,7 @@ public class Conexao {
             connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres",
                     "postgres", "thais123");
             if (connection != null) {
-                System.out.println("Banco de dados conectado!");
+                System.out.println("Banco de dados conectado! Que a força esteja com você!");
             } else {
                 System.out.println("Conexão com o banco de dados falhou!");
             }

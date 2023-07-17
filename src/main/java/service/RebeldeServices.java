@@ -16,7 +16,7 @@ public class RebeldeServices {
             preparedStatement.setString(4, localizacao);
             preparedStatement.setBoolean(5, ativo);
             preparedStatement.executeUpdate();
-            System.out.println("Inserção feita com sucesso!\n");
+            System.out.println("Inserção concluida com sucesso!\n");
             DadosServices.consultaDadosNoBanco();
         } catch (SQLException e) {
             e.printStackTrace();

@@ -25,7 +25,7 @@ public class DadosServices {
                 if (resultSetAtivos.next()) {
                     int totalAtivos = resultSetAtivos.getInt("ativos");
                     double porcentagemAtivos = (totalAtivos * 100.0) / totalRebeldes;
-                    System.out.println("Porcentagem de rebeldes ativos: " + porcentagemAtivos + "%");
+                    System.out.println("--------> Porcentagem de rebeldes ativos: " + porcentagemAtivos + "%");
                 }
             }
         } catch (SQLException e) {
@@ -47,7 +47,7 @@ public class DadosServices {
                 if (resultSetInativos.next()) {
                     int totalInativos = resultSetInativos.getInt("inativos");
                     double porcentagemInativos = (totalInativos * 100.0) / totalRebeldes;
-                    System.out.println("Porcentagem de rebeldes inativos: " + porcentagemInativos + "%");
+                    System.out.println("--------> Porcentagem de rebeldes inativos(traidores): " + porcentagemInativos + "%");
                 }
             }
         } catch (SQLException e) {
@@ -60,15 +60,22 @@ public class DadosServices {
         String sql = "SELECT * FROM rebeldes";
         try {
             ResultSet resultSet = statement.executeQuery(sql);
+
+            System.out.println("\nID\t| NOME DO REBELDE\t| IDADE\t| GÊNERO\t| LOCALIZAÇÃO\t| ATIVO");
+            System.out.println("-----------------------------------------------------------------");
+
             while (resultSet.next()) {
-                System.out.println("ID: " + resultSet.getInt("id") + " | NOME: " +
-                        resultSet.getString("nome") + " | IDADE: " + resultSet.getInt("idade") +
-                        " | GÊNERO: " + resultSet.getString("genero") +
-                        " | LOCALIZAÇÃO: " + resultSet.getString("localizacao") +
-                        " | ATIVO: " + resultSet.getBoolean("ativo"));
+                System.out.printf("%-3d\t| %-15s\t| %-5d\t| %-7s\t| %-20s\t| %-5b\n",
+                        resultSet.getInt("id"),
+                        resultSet.getString("nome"),
+                        resultSet.getInt("idade"),
+                        resultSet.getString("genero"),
+                        resultSet.getString("localizacao"),
+                        resultSet.getBoolean("ativo"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+
 }
